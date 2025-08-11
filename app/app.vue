@@ -12,7 +12,7 @@
         </ul>
       </menu>
       <div class="relative px-4">
-        <div class="bg-linear-to-r from-slate-50 via-slate-600 to-slate-50 h-0.5 w-full"></div>
+        <div class="bg-linear-to-l from-slate-50 via-slate-600 to-slate-50 h-0.5 w-full"></div>
       </div>
     </div>
   </div>
