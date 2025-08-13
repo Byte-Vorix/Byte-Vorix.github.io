@@ -4,5 +4,9 @@
   "services": "Services",
   "team": "Team",
   "contact": "Contact",
-  "lang": "Lang"
+  "dark": "Dark",
+  "system": "Device",
+  "light": "Light",
+  "en": "English",
+  "fa": "Persian"
 }
