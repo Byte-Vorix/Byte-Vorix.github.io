@@ -81,15 +81,16 @@ const changelang = async (lang) =>{
     console.error('Error:', e)
   }
 }
+const pageTitle = computed(() => t('name'));
 useHead({
-  title: t('name'),
+  title: pageTitle,
   htmlAttrs: {
     lang: i18nHead.value.htmlAttrs.lang,
     dir: i18nHead.value.htmlAttrs.dir,
   }
 });
 //theme
-
+  
 const loadTheme = () => {
     document.documentElement.classList.toggle(
         "dark",
@@ -98,7 +99,9 @@ const loadTheme = () => {
     );
 }
 
-loadTheme();
+onMounted(() => {
+    loadTheme();
+})
 
 const changetheme = (key) => {
     if(key == "system"){
