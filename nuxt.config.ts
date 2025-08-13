@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: ['@nuxt/content', '@nuxtjs/i18n'],
   css: ['~/main.css'],
   vite: {
@@ -39,6 +39,17 @@ export default defineNuxtConfig({
     alwaysRedirect: false,
     fallbackLocale: 'en',
   },
-}
-
+},
+          app: {
+            head: {
+              meta: [
+                { charset: 'utf-8' },
+                { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+                { hid: 'description', name: 'description', content: 'A description for my Nuxt 3 app.' }
+              ],
+              link: [
+                { rel: 'icon', type: 'image/png', href: 'https://avatars.githubusercontent.com/u/110593548?v=4' }
+              ]
+            }
+          }
 })
