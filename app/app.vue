@@ -36,18 +36,18 @@
       <Transition>
       <div v-if="menu.lang" class="fixed bottom-4 left-1/2 w-full px-2 -translate-x-1/2 flex justify-center">
         <div class="bg-black/5 dark:bg-white/5 rounded-md  backdrop-blur-2xl text-black dark:text-white px-3 md:px-12 py-2 flex flex-wrap gap-2 md:gap-12 select-none w-full md:w-fit justify-around">
-        <button class="cursor-pointer px-4 py-2 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changelang('en')">{{ $t('en')  }}</button>
-        <button class="cursor-pointer px-4 py-2 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changelang('fa')">{{ $t('fa')  }}</button>
-      </div>
+          <button class="cursor-pointer px-4 py-2 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changelang('en')">{{ $t('en')  }}</button>
+          <button class="cursor-pointer px-4 py-2 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changelang('fa')">{{ $t('fa')  }}</button>
+        </div>
       </div>
       </Transition>
       <Transition>
       <div v-if="menu.theme" class="fixed bottom-4 left-1/2 w-full px-2 -translate-x-1/2 flex justify-center">
 		    <div class="bg-slate-950/5 dark:bg-slate-50/5 rounded-md  backdrop-blur-2xl text-slate-950 dark:text-slate-50 px-3 md:px-12 py-2 flex flex-wrap gap-2 md:gap-12 select-none w-full md:w-fit justify-around">
-		    <button class="cursor-pointer px-4 py-2 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changetheme('dark')">{{ $t('dark')  }}</button>
-		    <button class="cursor-pointer px-4 py-2 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changetheme('system')">{{ $t('system')  }}</button>
-        <button class="cursor-pointer px-4 py-2 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changetheme('light')">{{ $t('light')  }}</button>
-      </div>
+		      <button class="cursor-pointer px-4 py-2 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changetheme('dark')">{{ $t('dark')  }}</button>
+		      <button class="cursor-pointer px-4 py-2 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changetheme('system')">{{ $t('system')  }}</button>
+          <button class="cursor-pointer px-4 py-2 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changetheme('light')">{{ $t('light')  }}</button>
+        </div>
       </div>
       </Transition>
     </div>
@@ -117,8 +117,7 @@ useHead({
     dir: i18nHead.value.htmlAttrs.dir,
   }
 });
-//theme
-  
+//theme  
 const loadTheme = () => {
     document.documentElement.classList.toggle(
         "dark",
@@ -126,13 +125,13 @@ const loadTheme = () => {
         (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
     );
 }
-
+// browser
 onMounted(() => {
     loadTheme();
     menuscreensize();
     window.addEventListener("resize", menuscreensize);
 })
-
+//theme
 const changetheme = (key) => {
     if(key == "system"){
       localStorage.removeItem("theme");

@@ -47,9 +47,6 @@ export default defineNuxtConfig({
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
                 { hid: 'description', name: 'description', content: 'A description for my Nuxt 3 app.' }
               ],
-              link: [
-                { rel: 'icon', type: 'image/png', href: 'https://avatars.githubusercontent.com/u/110593548?v=4' }
-              ]
             }
           }
 })
