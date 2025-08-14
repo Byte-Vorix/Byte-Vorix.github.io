@@ -1,15 +1,15 @@
 <template>
   <div>
     <NuxtRouteAnnouncer />
-    <div class="bg-[#FFFCFB] dark:bg-slate-950 text-black dark:text-white min-h-svh w-full relative vazir">
-      <menu class="w-full px-4 py-6 bg-white/50 dark:bg-black/50 flex flex-wrap justify-between items-center">
-        <h1 class="text-2xl text-slate-800 dark:text-slate-100 tracking-widest">{{ $t('name') }}</h1>
+    <div class="bg-[color:hsl(0,0%,90%)] dark:bg-[color:hsl(0,0%,0%)] text-[color:hsl(0,0%,5%)] dark:text-[color:hsl(0,0%,95%)] min-h-svh w-full relative vazir">
+      <menu class="w-full px-4 py-6 bg-[color:hsl(0,0%,95%)] dark:bg-[color:hsl(0,0%,5%)] flex flex-wrap justify-between items-center">
+        <h1 class="text-2xl tracking-widest">{{ $t('name') }}</h1>
         <Transition>
-        <ul class="grid md:flex gap-8 justify-center justify-items-center rounded-t-lg md:justify-between items-center px-2 fixed md:relative bottom-0 bg-slate-600/10 dark:bg-slate-300/10 backdrop-blur-2xl md:bg-transparent right-0 w-full md:w-fit grid-cols-2 py-4 md:py-0 z-10" v-if="menu.mmenu">
-          <li><a href="#" class="transition-colors hover:text-blue-600 dark:hover:text-blue-300">{{ $t('home')  }}</a></li>
-          <li><a href="#" class="transition-colors hover:text-blue-600 dark:hover:text-blue-300">{{ $t('services')  }}</a></li>
-          <li><a href="#" class="transition-colors hover:text-blue-600 dark:hover:text-blue-300">{{ $t('team')  }}</a></li>
-          <li><a href="#" class="transition-colors hover:text-blue-600 dark:hover:text-blue-300">{{ $t('contact')  }}</a></li>
+        <ul class="grid md:flex gap-8 justify-center justify-items-center rounded-t-lg md:justify-between items-center px-2 fixed md:relative bottom-0 bg-[color:hsl(0,0%,95%)] dark:bg-[color:hsl(0,0%,5%)]  backdrop-blur-2xl md:bg-transparent md:dark:bg-transparent right-0 w-full md:w-fit grid-cols-2 py-4 md:py-0 z-10" v-if="menu.mmenu">
+          <li><a href="#" class="transition-colors hover:text-blue-600 dark:hover:text-green-400">{{ $t('home')  }}</a></li>
+          <li><a href="#" class="transition-colors hover:text-blue-600 dark:hover:text-green-400">{{ $t('services')  }}</a></li>
+          <li><a href="#" class="transition-colors hover:text-blue-600 dark:hover:text-green-400">{{ $t('team')  }}</a></li>
+          <li><a href="#" class="transition-colors hover:text-blue-600 dark:hover:text-green-400">{{ $t('contact')  }}</a></li>
           <li class="bg-slate-950/30 dark:bg-slate-50/30 h-10 w-px hidden md:block"></li>
           <li @click="togglemenu('lang')">
             <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-6 h-6 cursor-pointer" viewBox="0 0 16 16">
@@ -31,22 +31,22 @@
         </button>
       </menu>
       <div class="relative px-4">
-        <div class="bg-linear-to-r from-slate-50 via-slate-600 to-slate-50 h-0.5 w-full dark:from-slate-950 dark:via-slate-100 dark:to-slate-950"></div>
+        <div class="bg-linear-to-r from-slate-50 via-blue-600 to-slate-50 h-0.5 w-full dark:from-slate-950 dark:via-green-400 dark:to-slate-950"></div>
       </div>
       <Transition>
       <div v-if="menu.lang" class="fixed bottom-4 left-1/2 w-full px-2 -translate-x-1/2 flex justify-center">
-        <div class="bg-slate-950/5 dark:bg-slate-50/5 rounded-md  backdrop-blur-2xl text-slate-950 dark:text-slate-50 px-3 md:px-12 py-2 flex flex-wrap gap-2 md:gap-12 border-slate-950 dark:border-slate-50 border-2 select-none w-full md:w-fit justify-around">
-        <button class="cursor-pointer px-4 py-2 border-2 border-slate-950 dark:border-slate-50 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changelang('en')">{{ $t('en')  }}</button>
-        <button class="cursor-pointer px-4 py-2 border-2 border-slate-950 dark:border-slate-50 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changelang('fa')">{{ $t('fa')  }}</button>
+        <div class="bg-black/5 dark:bg-white/5 rounded-md  backdrop-blur-2xl text-black dark:text-white px-3 md:px-12 py-2 flex flex-wrap gap-2 md:gap-12 select-none w-full md:w-fit justify-around">
+        <button class="cursor-pointer px-4 py-2 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changelang('en')">{{ $t('en')  }}</button>
+        <button class="cursor-pointer px-4 py-2 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changelang('fa')">{{ $t('fa')  }}</button>
       </div>
       </div>
       </Transition>
       <Transition>
       <div v-if="menu.theme" class="fixed bottom-4 left-1/2 w-full px-2 -translate-x-1/2 flex justify-center">
-		    <div class="bg-slate-950/5 dark:bg-slate-50/5 rounded-md  backdrop-blur-2xl text-slate-950 dark:text-slate-50 px-3 md:px-12 py-2 flex flex-wrap gap-2 md:gap-12 border-slate-950 dark:border-slate-50 border-2 select-none w-full md:w-fit justify-around">
-		    <button class="cursor-pointer px-4 py-2 border-2 border-slate-950 dark:border-slate-50 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changetheme('dark')">{{ $t('dark')  }}</button>
-		    <button class="cursor-pointer px-4 py-2 border-2 border-slate-950 dark:border-slate-50 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changetheme('system')">{{ $t('system')  }}</button>
-        <button class="cursor-pointer px-4 py-2 border-2 border-slate-950 dark:border-slate-50 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changetheme('light')">{{ $t('light')  }}</button>
+		    <div class="bg-slate-950/5 dark:bg-slate-50/5 rounded-md  backdrop-blur-2xl text-slate-950 dark:text-slate-50 px-3 md:px-12 py-2 flex flex-wrap gap-2 md:gap-12 select-none w-full md:w-fit justify-around">
+		    <button class="cursor-pointer px-4 py-2 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changetheme('dark')">{{ $t('dark')  }}</button>
+		    <button class="cursor-pointer px-4 py-2 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changetheme('system')">{{ $t('system')  }}</button>
+        <button class="cursor-pointer px-4 py-2 bg-slate-950/20 dark:bg-slate-50/20 rounded-sm transition-colors hover:bg-slate-950/30 dark:hover:bg-slate-50/30" @click="changetheme('light')">{{ $t('light')  }}</button>
       </div>
       </div>
       </Transition>
@@ -107,6 +107,7 @@ const changelang = async (lang) =>{
   } catch (e){
     console.error('Error:', e)
   }
+  menu.value['lang'] = false;
 }
 const pageTitle = computed(() => t('name'));
 useHead({
@@ -140,6 +141,7 @@ const changetheme = (key) => {
       localStorage.theme = key;
       loadTheme();
     }
+    menu.value['theme'] = false;
 }
 </script>
 <style scoped>
